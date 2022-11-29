@@ -55,6 +55,7 @@ function createElement(id, x1, y1, x2, y2, type, color, brushSize, fill) {
         const elementDetails = type === "line"
           ? generator.line(x1, y1, x2, y2, { stroke: color, strokeWidth: brushSize})
           : generator.rectangle(x1, y1, x2 - x1, y2 - y1, {
+            fillStyle: 'solid',
             stroke: color,
             fill: fill,
           });
@@ -65,6 +66,7 @@ function createElement(id, x1, y1, x2, y2, type, color, brushSize, fill) {
         const radius = getRadiusDistance(x1, y1, x2, y2);
         const diameter = radius * 2;
         const elementDetails = generator.circle(x1, y1, diameter, {
+          fillStyle: 'solid',
           stroke: color,
           fill: fill,
         });
@@ -194,19 +196,19 @@ export default function App() {
     // roughCanvas.draw(line);
   }, [elements]);
 
-  const updateElement = (id, x1, y1, x2, y2, type, element) => {
+  const updateElement = (id, x1, y1, x2, y2, type, element, elementColor) => {
     const elementsCopy = [...elements];
-
+    // console.log(element.color)
     const { fill } = element && element.elementDetails ? element.elementDetails.options : "";
 
     switch (type) {
       case "line":
       case "rectangle":
-        const moveElement = createElement(id, x1, y1, x2, y2, type, color, brushSize);
+        const moveElement = createElement(id, x1, y1, x2, y2, type, elementColor, brushSize, fill);
         elementsCopy[id] = moveElement;
         break;
       case "circle":
-        elementsCopy[id] = createElement(id, x1, y1, x2, y2, type, color, brushSize);
+        elementsCopy[id] = createElement(id, x1, y1, x2, y2, type, elementColor, brushSize, fill);
         break;
       case "pencil":
         elementsCopy[id].points = [...elementsCopy[id].points, { x: x2, y: y2 }];
@@ -268,16 +270,15 @@ export default function App() {
     if (action === "drawing") {
       const index = elements.length - 1;
       const { x1, y1 } = elements[index];
-      updateElement(index, x1, y1, clientX, clientY, tool, selectedElement);
+      updateElement(index, x1, y1, clientX, clientY, tool, selectedElement, color);
 
     } else if (action === "moving") {
-
       const { id, x1, x2, y1, y2, type, offsetX, offsetY } = selectedElement;
       const width = x2 - x1;
       const height = y2 - y1;
       const offX1 = clientX - offsetX;
       const offY1 = clientY - offsetY;
-      updateElement(id, offX1, offY1, offX1 + width, offY1 + height, type, selectedElement);
+      updateElement(id, offX1, offY1, offX1 + width, offY1 + height, type, selectedElement, selectedElement.color);
     }
   };
 
