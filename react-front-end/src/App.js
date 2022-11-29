@@ -59,7 +59,7 @@ function createElement(id, x1, y1, x2, y2, type, color, brushSize, fill) {
             stroke: color,
             fill: fill,
           });
-        return { id, x1, y1, x2, y2, type, elementDetails, color };
+        return { id, x1, y1, x2, y2, type, elementDetails, color, brushSize };
       }
     case "circle":
       {
@@ -196,19 +196,21 @@ export default function App() {
     // roughCanvas.draw(line);
   }, [elements]);
 
-  const updateElement = (id, x1, y1, x2, y2, type, element, elementColor) => {
+  const updateElement = (id, x1, y1, x2, y2, type, element, elementColor, elementBrushSize) => {
     const elementsCopy = [...elements];
     // console.log(element.color)
     const { fill } = element && element.elementDetails ? element.elementDetails.options : "";
 
     switch (type) {
       case "line":
+        const lineElement = createElement(id, x1, y1, x2, y2, type, elementColor, elementBrushSize, fill);
+        elementsCopy[id] = lineElement;
       case "rectangle":
-        const moveElement = createElement(id, x1, y1, x2, y2, type, elementColor, brushSize, fill);
+        const moveElement = createElement(id, x1, y1, x2, y2, type, elementColor, elementBrushSize, fill);
         elementsCopy[id] = moveElement;
         break;
       case "circle":
-        elementsCopy[id] = createElement(id, x1, y1, x2, y2, type, elementColor, brushSize, fill);
+        elementsCopy[id] = createElement(id, x1, y1, x2, y2, type, elementColor, elementBrushSize, fill);
         break;
       case "pencil":
         elementsCopy[id].points = [...elementsCopy[id].points, { x: x2, y: y2 }];
@@ -270,7 +272,7 @@ export default function App() {
     if (action === "drawing") {
       const index = elements.length - 1;
       const { x1, y1 } = elements[index];
-      updateElement(index, x1, y1, clientX, clientY, tool, selectedElement, color);
+      updateElement(index, x1, y1, clientX, clientY, tool, selectedElement, color, brushSize);
 
     } else if (action === "moving") {
       const { id, x1, x2, y1, y2, type, offsetX, offsetY } = selectedElement;
@@ -278,7 +280,7 @@ export default function App() {
       const height = y2 - y1;
       const offX1 = clientX - offsetX;
       const offY1 = clientY - offsetY;
-      updateElement(id, offX1, offY1, offX1 + width, offY1 + height, type, selectedElement, selectedElement.color);
+      updateElement(id, offX1, offY1, offX1 + width, offY1 + height, type, selectedElement, selectedElement.color, selectedElement.brushSize);
     }
   };
 
