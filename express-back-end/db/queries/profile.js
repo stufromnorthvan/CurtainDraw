@@ -3,7 +3,7 @@ const db = require('../connection');
 const getUsers = () => {
   return db.query('SELECT * FROM users;')
     .then(data => {
-      console.log("Get User From Id DB Query Completed: ", data.rows);
+      console.log("Get Users DB Query Completed: ", data.rows);
       return data.rows;
     });
 };
