@@ -7,7 +7,7 @@ const getUsers = () => {
       return data.rows;
     });
 };
-const getUserFromId = (userId) => {
+const getUserById = (userId) => {
   return db.query(`SELECT * FROM users
   WHERE id = ${userId} ;
   `)
@@ -18,7 +18,7 @@ const getUserFromId = (userId) => {
 };
 
 
-const drawingsByUserId = (userId) => {
+const getDrawingsByUserId = (userId) => {
   return db.query(`SELECT drawings.*
   FROM drawings
   JOIN users on user_id = users.id
@@ -30,7 +30,7 @@ const drawingsByUserId = (userId) => {
   });
 }
 
-const totalDrawings = (userId) => {
+const getTotalDrawings = (userId) => {
   return db.query(`SELECT count(drawings.*) as total_drawings
   FROM drawings
   JOIN users on user_id = users.id
