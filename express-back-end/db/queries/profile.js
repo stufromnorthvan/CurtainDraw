@@ -1,5 +1,35 @@
 const db = require('../connection');
 
+const getUsers = () => {
+  return db.query('SELECT * FROM users;')
+    .then(data => {
+      console.log("Get User From Id DB Query Completed: ", data.rows)
+      return data.rows;
+    });
+};
+const getUserFromId = (userId) => {
+  return db.query(`SELECT * FROM users
+  WHERE id = ${userId} ;
+  `)
+    .then(data => {
+      console.log("Get User From Id DB Query Completed: ",data.rows);
+      return data.rows;
+    });
+};
+
+
+const drawingsByUserId = (userId) => {
+  return db.query(`SELECT drawings.*
+  FROM drawings
+  JOIN users on user_id = users.id
+  WHERE user_id = ${userId}
+  RETURNING *`)
+  .then(data => {
+    console.log("Drawings by User ID DB Query Completed: ",data.rows)
+    return data.rows;
+  });
+}
+
 const totalDrawings = (userId) => {
   return db.query(`SELECT count(drawings.*) as total_drawings
   FROM drawings
@@ -7,7 +37,7 @@ const totalDrawings = (userId) => {
   WHERE user_id = ${userId}
   RETURNING *`)
   .then(data => {
-    console.log("data after completed db",data.rows)
+    console.log("Total Drawings Count DB Query Completed: ",data.rows)
     return data.rows;
   });
 }
