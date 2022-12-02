@@ -19,22 +19,22 @@ export default function HomePage(props) {
         <div className="examples">
 
           <div className="ex1">
-            <img src="freehand.png" />
+            <img src="freehand.png" alt="freehand"/>
             <label>Freehand Drawing!</label>
           </div>
 
           <div className="ex2">
-            <img src="shapes.png" />
+            <img src="shapes.png" alt="shapes"/>
             <label>Create Shapes!</label>
           </div>
 
           <div className="ex3">
-            <img src="erase.png" />
+            <img src="erase.png" alt="erase"/>
             <label>Erase And Start Over!</label>
           </div>
 
           <div className="ex4">
-            <img src="drawex.png" />
+            <img src="drawex.png" alt="draw example"/>
             <label>Put It All Together, and Save!</label>
           </div>
 

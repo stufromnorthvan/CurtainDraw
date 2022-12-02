@@ -13,7 +13,7 @@ export default function AccountPage(props) {
       {user && <section className="main_section">
       
         <section className="user">
-          <img src={user.avatar_url}/>
+          <img src={user.avatar_url} alt="user"/>
           <div className="user_info">
             <label className="user_name">{user.name}</label>
             <desc>{user.bio}</desc>

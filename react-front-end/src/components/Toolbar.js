@@ -6,7 +6,7 @@ export default function Toolbar(props) {
       <div className="tools">
 
         <div className="selectTool">
-          <i class="fa-solid fa-hand-pointer"></i>
+          <i className="fa-solid fa-hand-pointer"></i>
           <label htmlFor="line">Selection</label>
           <input
             type="radio"
@@ -18,7 +18,7 @@ export default function Toolbar(props) {
         </div>
 
         <div className="lineTool">
-          <i class="fa-solid fa-lines-leaning"></i>
+          <i className="fa-solid fa-lines-leaning"></i>
           <label htmlFor="line">Line</label>
           <input
             type="radio"
@@ -30,7 +30,7 @@ export default function Toolbar(props) {
         </div>
         
         <div className="rectTool">
-          <i class="fa-regular fa-square"></i>
+          <i className="fa-regular fa-square"></i>
           <label htmlFor="rectangle">Rectangle</label>
           <input
             type="radio"
@@ -42,7 +42,7 @@ export default function Toolbar(props) {
         </div>
         
         <div className="circTool">
-          <i class="fa-regular fa-circle"></i>
+          <i className="fa-regular fa-circle"></i>
           <label htmlFor="circle">Circle</label>
           <input
             type="radio"
@@ -54,7 +54,7 @@ export default function Toolbar(props) {
         </div>
         
         <div className="pencilTool">
-          <i class="fa-solid fa-pencil"></i>
+          <i className="fa-solid fa-pencil"></i>
           <label htmlFor="pencil">Pencil</label>
           <input
             type="radio"
@@ -66,7 +66,7 @@ export default function Toolbar(props) {
         </div>
 
         <div className="eraserTool">
-          <i class="fa-solid fa-eraser"></i>
+          <i className="fa-solid fa-eraser"></i>
           <label htmlFor="eraser">Eraser</label>
           <input
             type="radio"
@@ -78,7 +78,7 @@ export default function Toolbar(props) {
         </div>
         
         <div className="fillTool">
-          <i class="fa-solid fa-fill-drip"></i>
+          <i className="fa-solid fa-fill-drip"></i>
           <label htmlFor="fill">Fill</label>
           <input
             type="radio"

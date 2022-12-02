@@ -1,6 +1,5 @@
 import React, { useLayoutEffect, useState } from 'react';
 import rough from 'roughjs/bundled/rough.esm';
-import useApplicationData from "../hooks/useApplicationData";
 import axios from 'axios';
 import Toolbar from './Toolbar';
 import getStroke from "perfect-freehand";

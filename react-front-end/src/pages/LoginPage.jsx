@@ -9,7 +9,7 @@ export default function LoginPage(props) {
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
 
-  const user = React.useContext(AuthContext);
+  //const user = React.useContext(AuthContext);
 
   //Submit Button: onClick, make API Call then on success, onClick={props.setToken(id from API call)}
 
