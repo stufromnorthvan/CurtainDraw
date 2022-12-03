@@ -2,6 +2,7 @@ import { AuthContext } from '../App';
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import './styles/home.css';
+import './styles/loginPage.css';
 import axios from 'axios';
 
 export default function LoginPage(props) {
@@ -38,16 +39,14 @@ export default function LoginPage(props) {
   return (
     <main className="main_page">
       <section className="main_section">
-        <div>
-          <label>
-            <p>Username:</p>
-            <input type="text" name="name" placeholder={'Username'} value={username} onChange={(e) => { setUsername(e.target.value); }} />
+        <div className='main'>
+          <label className='username'>
+            <input className='username' type="text" name="name" placeholder={'Username'} value={username} onChange={(e) => { setUsername(e.target.value); }} />
           </label>
-          <label>
-            <p>Password:</p>
-            <input type="password" name="password" placeholder={'Password'} value={password} onChange={(e) => { setPassword(e.target.value); }} />
+          <label className='password'>
+            <input className='password' type="password" name="password" placeholder={'Password'} value={password} onChange={(e) => { setPassword(e.target.value); }} />
           </label>
-          <div>
+          <div className='loginbtn'>
             <button onClick={login}>Login</button>
           </div>
         </div>

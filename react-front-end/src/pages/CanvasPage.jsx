@@ -1,6 +1,7 @@
 import { AuthContext } from '../App';
 import React from "react";
 import './styles/canvas.css';
+import "react-color-palette/lib/css/styles.css";
 import Canvas from "../components/Canvas";
 import Toolbar from "../components/Toolbar";
 let canvasH = window.innerHeight - 200;
