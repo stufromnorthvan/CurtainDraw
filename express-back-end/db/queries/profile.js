@@ -36,7 +36,6 @@ const getDrawingsByUserId = (userId) => {
   JOIN users on user_id = users.id
   WHERE user_id = $1;`, [userId])
     .then(data => {
-      console.log("Drawings by User ID DB Query Completed: ", data.rows);
       return data.rows;
     });
 };
