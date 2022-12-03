@@ -1,6 +1,6 @@
 import { AuthContext } from '../App';
 import React from "react";
-import './styles/canvas.css';
+import './styles/canvas.scss';
 import Canvas from "../components/Canvas";
 import Toolbar from "../components/Toolbar";
 let canvasH = window.innerHeight - 200;
@@ -12,10 +12,26 @@ export default function CanvasPage() {
 
   if (user) {
     return (
-      <Canvas
-        height={canvasH}
-        width={canvasW}
-      />
+      <div>
+        <div class="curtain">
+
+          <div class="curtain__panel curtain__panel--left">
+            <h1>Sav</h1>
+          </div>
+
+          <div class="curtain__content">
+          </div>
+
+          <div class="curtain__panel curtain__panel--right">
+            <h1>ed!</h1>
+          </div>
+
+        </div>
+        <Canvas
+          height={canvasH}
+          width={canvasW}
+        />
+      </div>
     );
   }
   return (

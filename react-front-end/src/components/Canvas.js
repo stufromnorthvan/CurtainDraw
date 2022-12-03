@@ -1,4 +1,5 @@
 import React, { Profiler, useLayoutEffect, useState } from 'react';
+import $ from "jquery";
 import rough from 'roughjs/bundled/rough.esm';
 import useApplicationData from "../hooks/useApplicationData";
 import axios from 'axios';
@@ -291,7 +292,14 @@ export default function Canvas(props) {
     const dataURL = canvas.toDataURL();
     axios.post('/api/drawing', {
       image: dataURL 
-    })
+    });
+    $('.curtain').addClass('active transitioning');
+    setTimeout(() => { 
+      setTimeout(()=> {
+      $('.curtain').removeClass('transitioning');
+      }, 1000)  
+    $('.curtain').removeClass('active');
+    }, 1750)
   }
 
   return (
@@ -323,7 +331,7 @@ export default function Canvas(props) {
           onMouseMove={mouseMove}
           onMouseUp={mouseUp}>
         </canvas>
-      </section>
+      </section>     
     </main>
   )
 }
