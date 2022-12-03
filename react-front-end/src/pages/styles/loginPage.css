@@ -1,0 +1,46 @@
+.main_section {
+  display: flex;
+  padding-top: 5em;
+}
+
+div.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input.username {
+  display: flex;
+  width: 300px;
+  font-size: 32px;
+  margin-bottom: 0.5em;
+  border: none;
+  border-bottom: 3px solid black;
+  background-color: transparent;
+  font-family: 'Caveat';
+}
+
+input.password {
+  display: flex;
+  width: 300px;
+  font-size: 32px;
+  margin-bottom: 1em;
+  border: none;
+  border-bottom: 3px solid black;
+  background-color: transparent;
+  font-family: 'Caveat';
+}
+
+div.loginbtn button{
+  display: flex;
+  width: 200px;
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 0.75em;
+  font-size: 30px;
+  font-family: 'Caveat';
+  background-color: rgb(170,160,90);
+}
+
