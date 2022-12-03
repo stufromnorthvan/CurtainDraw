@@ -1,6 +1,10 @@
 import React from "react";
 import '../pages/styles/toolbar.css'
+import { ColorPicker, useColor, toColor } from "react-color-palette";
 export default function Toolbar(props) {
+
+  const [pcolor, setpColor] = useColor("rgb(100,0,100)");
+
   return (
     <div className="toolbar">
       <div className="tools">
@@ -118,6 +122,22 @@ export default function Toolbar(props) {
           Blue
           <input type="radio" checked={props.color === "blue"} onChange={() => props.setColor("blue")} />
         </label>
+
+        <label>
+          Custom
+          <input style={{"margin-bottom": "1em"}} type="radio" checked={props.color === pcolor.hex} onChange={() => props.setColor(pcolor.hex)} />
+        </label>
+
+        <ColorPicker 
+          width={180} 
+          height={180} 
+          color={pcolor} 
+          onChange={setpColor} 
+          hideHSV 
+          hideRGB
+          hideHEX
+          dark 
+        />
 
       </div>
 

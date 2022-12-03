@@ -5,6 +5,7 @@ import useApplicationData from "../hooks/useApplicationData";
 import axios from 'axios';
 import Toolbar from './Toolbar';
 import getStroke from "perfect-freehand";
+import { ColorPicker, useColor } from "react-color-palette";
 
 const generator = rough.generator();
 

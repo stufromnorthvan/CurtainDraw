@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 1em;
+  margin-top: 0.5em;
   font-size: 18px;
   font-family: 'Caveat';
 }
@@ -17,7 +17,7 @@
   display: flex;
   width: 150px;
   justify-content: space-between;
-  margin: 0.2em 0 0.2em 0;
+  margin: 0.1em 0 0.1em 0;
 }
 
 .colors {
@@ -46,7 +46,7 @@
   display: flex;
   width: 180px;
   justify-content: center;
-  margin: 0.5em 0 0.5em 0;
+  margin: 0.3em 0 0.3em 0;
   font-size: 18px;
   font-family: 'Caveat';
 }
@@ -56,7 +56,7 @@
   flex-direction: column;
   width: 200px;
   align-items: center;
-  margin: 2em 0 2em 0;
+  margin: 1em 0 1em 0;
   font-size: 24px;
   font-family: 'Caveat';
 }

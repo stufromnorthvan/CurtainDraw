@@ -8,8 +8,10 @@
     "node-sass": "^8.0.0",
     "perfect-freehand": "^1.2.0",
     "react": "^16.8.6",
+    "react-color-palette": "^6.2.0",
     "react-dom": "^16.8.6",
     "react-router-dom": "^6.4.3",
+
     "react-scripts": "4.0.3",
     "roughjs": "^4.5.2"
   },
