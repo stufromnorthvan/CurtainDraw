@@ -1,0 +1,82 @@
+.canvas_section {
+  display: flex;
+  margin: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.curtain {
+  margin: 0 auto;
+  width: 100vw;
+  height: 100vh;
+  // background-color: red;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  &.active { 
+          // Slide the first panel
+        div.curtain__panel--left {
+          transform: translateX(0);
+        }
+        
+        // Slide the second panel
+        div.curtain__panel--right {
+          transform: translateX(0);
+        }
+        z-index: 999;
+  } 
+  &.transitioning {
+    
+    z-index: 999;
+  }
+  
+  &__wrapper {
+    width: 100%;
+    height: 100%;
+    
+    input[type=button] {
+      position: absolute;
+      cursor: pointer;
+      width: 100%;
+      height: 100%;
+      z-index: 100;
+      opacity: 0;
+      top: 0;
+      left: 0;
+      
+    }
+  }
+  
+  &__panel {
+    display: flex;
+    align-items: center;
+    background: #800020;
+    color: #fff;
+    float: left;
+    position: relative;
+    width: 50%;
+    height: 100vh;
+    transition: all 1s ease-out;
+    z-index: 2;
+    &--left {
+      justify-content: flex-end;
+      transform: translateX(-100%);
+    }
+    &--right {
+      justify-content: flex-start;
+      transform: translateX(100%);
+    }
+  }
+
+  &__content {
+
+
+    flex-direction: column;
+    height: 100%;
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+    width: 100%;
+  }
+
+}
