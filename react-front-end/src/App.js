@@ -7,6 +7,7 @@ import CanvasPage from './pages/CanvasPage';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 
+
 export const AuthContext = React.createContext(null);
 
 export default function App() {
