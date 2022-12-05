@@ -102,6 +102,7 @@ div.img img{
 .account_images div.info {
   display: flex;
   border: 2px solid black;
+  font-size: 20px;
   border-radius: 0.5em;
   width: 350px;
   justify-content: space-between;
