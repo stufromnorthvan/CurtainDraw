@@ -7,6 +7,7 @@
 .main_section {
   display: flex;
   min-height: 85vh;
+  background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
   background-color: rgb(190, 90, 90);
   flex-direction: column;
   margin-left: auto;
@@ -29,7 +30,8 @@ label.title{
   justify-content: center;
   padding: 1em 0 1em 0;
   margin-bottom: 3em;
-  background-color: rgb(170,160,90);
+  background-image: url("https://www.transparenttextures.com/patterns/diagonal-waves.png");
+  background-color: rgb(200, 180, 65);
 }
 
 div.examples {

@@ -6,6 +6,7 @@
 .main_page {
   display: flex;
   min-height: 85vh;
+  background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
   background-color: rgb(190, 90, 90);
 }
 
