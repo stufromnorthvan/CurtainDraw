@@ -43,5 +43,6 @@ div.loginbtn button{
   font-family: 'Caveat';
   background-image: url("https://www.transparenttextures.com/patterns/diagonal-waves.png");
   background-color: rgb(200, 180, 65);
+  cursor: pointer;
 }
 
