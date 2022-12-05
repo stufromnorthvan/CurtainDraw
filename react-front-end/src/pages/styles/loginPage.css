@@ -1,6 +1,5 @@
 .main_section {
   display: flex;
-  padding-top: 5em;
 }
 
 div.main {
@@ -14,6 +13,7 @@ input.username {
   width: 300px;
   font-size: 32px;
   margin-bottom: 0.5em;
+  margin-top: 5em;
   border: none;
   border-bottom: 3px solid black;
   background-color: transparent;
@@ -41,6 +41,7 @@ div.loginbtn button{
   border-radius: 0.75em;
   font-size: 30px;
   font-family: 'Caveat';
-  background-color: rgb(170,160,90);
+  background-image: url("https://www.transparenttextures.com/patterns/diagonal-waves.png");
+  background-color: rgb(200, 180, 65);
 }
 

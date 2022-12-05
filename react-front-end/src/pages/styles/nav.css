@@ -5,7 +5,8 @@
 
 .nav {
   display: flex;
-  background-color: rgb(160, 40, 40);
+  background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
+  background-color: rgb(255, 0, 0);
   height: 100px;
   box-sizing: border-box;
   border: 3px solid black;
@@ -32,7 +33,7 @@
 .nav_btns {
   display: flex;
   flex-direction: row;
-  margin-left: 5em;
+  margin-left: 3em;
 }
 
 .nav_loggedin {
@@ -56,7 +57,8 @@ div.nav_user {
   border-radius: 0.5em;
   font-size: 24px;
   padding: 0.5em;
-  background-color: rgb(170, 160, 90);
+  background-image: url("https://www.transparenttextures.com/patterns/diagonal-waves.png");
+  background-color: rgb(200, 180, 65);
   margin-left: 2em;
 }
 
