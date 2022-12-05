@@ -11,13 +11,14 @@ export default function AccountPage(props) {
   const [totdrawings, settotDrawings] = useState(0);
 
   useEffect(() => {
-    (async () => {
+    {user && (async () => {
       let res = await Axios.post('/api/user', {
         user_id: user.id
       })
       settotDrawings(res.data.length)
     })();
-  }, []);
+  }}, []);
+
   
   return(
     <main className="main_page">

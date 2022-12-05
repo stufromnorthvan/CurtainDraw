@@ -117,4 +117,5 @@ div.info i {
   border: 2px solid black;
   border-radius: 1em;
   padding: 0.3em;
+  cursor: pointer;
 }
