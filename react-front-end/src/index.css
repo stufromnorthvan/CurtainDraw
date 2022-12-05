@@ -6,6 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
   background-color: rgb(190, 90, 90);
 }
 

@@ -300,11 +300,6 @@ export default function Canvas(props) {
   const saveImage = () => {
     const canvas = document.getElementById('curtaindraw');
     const dataURL = canvas.toDataURL();
-
-    const link = document.createElement("a");
-    link.download = `${Date.now()}.jpg`;
-    link.href = dataURL;
-    link.click();
     
     axios.post('/api/drawing', {
       image: dataURL 
@@ -316,6 +311,16 @@ export default function Canvas(props) {
       }, 1000)  
     $('.curtain').removeClass('active');
     }, 1750)
+  }
+
+  const downloadImage = () => {
+    const canvas = document.getElementById('curtaindraw');
+    const dataURL = canvas.toDataURL();
+
+    const link = document.createElement("a");
+    link.download = `${Date.now()}.jpg`;
+    link.href = dataURL;
+    link.click();
   }
 
   return (
@@ -330,6 +335,7 @@ export default function Canvas(props) {
           setTool={setTool}
           setColor={setColor}
           save={saveImage}
+          download={downloadImage}
           changeBrushSize={changeBrushSize} 
         />
       </article>

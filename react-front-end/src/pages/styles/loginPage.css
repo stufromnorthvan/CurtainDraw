@@ -1,5 +1,7 @@
 .main_section {
   display: flex;
+  font-family: 'Caveat';
+  font-size: 24px;
 }
 
 div.main {
