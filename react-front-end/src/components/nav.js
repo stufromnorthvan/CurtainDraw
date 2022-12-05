@@ -13,10 +13,11 @@ export default function Nav(props) {
 
   return (
     <nav className="nav">
-      <img src="curtaindrawlogo.png" className="mainlogo" />
+      <Link to="/">
+        <img src="curtaindrawlogo.png" className="mainlogo" />
+      </Link>
       <div className="nav_links">
         <div className="nav_btns">
-          <Link to="/" className="nav_home" style={{ color: 'rgb(50,50,50)', textDecoration: 'none' }}>Home</Link>
           {user && <Link to="/canvas" className="nav_new" style={{ color: 'rgb(50,50,50)', textDecoration: 'none' }}>Create New</Link>}
           {!user && <Link to="/login" className="nav_new" style={{ color: 'rgb(50,50,50)', textDecoration: 'none' }}>Login</Link>}
           {user && <Link to="/" onClick={logout} className="nav_new" style={{ color: 'rgb(50,50,50)', textDecoration: 'none' }}>Logout</Link>}

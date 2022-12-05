@@ -1,5 +1,5 @@
 import React, { Profiler, useLayoutEffect, useState } from 'react';
-import $ from "jquery";
+import $, { data } from "jquery";
 import rough from 'roughjs/bundled/rough.esm';
 import useApplicationData from "../hooks/useApplicationData";
 import axios from 'axios';
@@ -176,6 +176,7 @@ export default function Canvas(props) {
     context.clearRect(0, 0, canvas.width, canvas.height);
 
     const roughCanvas = rough.canvas(canvas);
+    setBackground();
 
     // test shapes:
     // const rect = generator.rectangle(10, 10, 200, 200);
@@ -288,9 +289,23 @@ export default function Canvas(props) {
     setSelectedElement(null);
   };
 
+  const setBackground = () => {
+    const canvas = document.getElementById('curtaindraw');
+    const context = canvas.getContext('2d');
+    context.fillStyle = "#fff";
+    context.fillRect(0, 0, canvas.width, canvas.height);
+    context.fillStyle = color;
+  }
+
   const saveImage = () => {
     const canvas = document.getElementById('curtaindraw');
     const dataURL = canvas.toDataURL();
+
+    const link = document.createElement("a");
+    link.download = `${Date.now()}.jpg`;
+    link.href = dataURL;
+    link.click();
+    
     axios.post('/api/drawing', {
       image: dataURL 
     });
