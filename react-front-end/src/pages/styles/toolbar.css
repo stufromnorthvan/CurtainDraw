@@ -57,6 +57,12 @@
   background-color: rgb(200, 180, 65);
 }
 
+.tool_buttons button:hover {
+  display: flex;
+  background-color: rgb(255, 230, 90);
+  box-shadow: 0 0 11px rgba(0, 0, 0, 0.5);
+}
+
 .brush_option {
   display: flex;
   flex-direction: column;

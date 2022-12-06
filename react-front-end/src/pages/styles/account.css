@@ -1,10 +1,3 @@
-.main_page {
-  border-bottom: 3px solid black;
-}
-.sidebar {
-  border-bottom: none;
-}
-
 .main_section {
   display: flex;
   min-height: 85vh;
@@ -118,4 +111,10 @@ div.info i {
   border-radius: 1em;
   padding: 0.3em;
   cursor: pointer;
+}
+
+div.info i:hover{
+  display: flex;
+  background-color: rgb(255, 230, 90);
+  box-shadow: 0 0 9px rgba(0, 0, 0, 0.5);
 }

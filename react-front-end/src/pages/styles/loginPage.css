@@ -48,3 +48,9 @@ div.loginbtn button{
   cursor: pointer;
 }
 
+div.loginbtn button:hover {
+  display: flex;
+  background-color: rgb(255, 230, 90);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+

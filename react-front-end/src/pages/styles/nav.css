@@ -62,6 +62,12 @@ div.nav_user {
   margin-left: 2em;
 }
 
+.nav_new:hover{
+  display: flex;
+  background-color: rgb(255, 230, 90);
+  box-shadow: 0 0 11px rgba(0, 0, 0, 0.5);
+}
+
 .nav_home {
   display: flex;
   border: 2px solid black;
@@ -69,6 +75,13 @@ div.nav_user {
   font-size: 24px;
   padding: 0.5em;
   background-color: rgb(170, 160, 90);
+  
+}
+
+.nav_home:hover{
+  display: flex;
+  background-color: rgb(255, 230, 90);
+  box-shadow: 0 0 11px rgba(0, 0, 0, 0.5);
 }
 
 .nav_acc {
