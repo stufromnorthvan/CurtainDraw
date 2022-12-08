@@ -17,7 +17,7 @@
 label.title{
   display: flex;
   font-size: 100px;
-  margin: 1em 0 0.7em 0;
+  margin: 0.5em 0 0.5em 0;
   font-family: 'Lobster';
 }
 
@@ -31,6 +31,7 @@ label.title{
   justify-content: center;
   padding: 1em 0 1em 0;
   margin-bottom: 2em;
+  margin-top: 1em;
   background-image: url("https://www.transparenttextures.com/patterns/diagonal-waves.png");
   background-color: rgb(200, 180, 65);
 }
